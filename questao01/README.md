@@ -1,26 +1,44 @@
-## Getting Started
+# Projeto: Sistema de Passagens Aéreas
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este projeto simula a gestão de passagens aéreas em diferentes classes (primeira classe e classe econômica), com a possibilidade de transferência de passagens entre proprietários. O sistema é baseado em um modelo orientado a objetos com uso de classes POJO, interfaces e serviços.
 
-## Folder Structure
+## 📌 Requisitos da Atividade
 
-The workspace contains two folders by default, where:
+Cada estudante deve:
+- Definir um **serviço remoto** (ex: venda de passagens, check-in, gerenciamento de voos).
+- Criar **classes do tipo POJO** que representem informações relevantes do serviço escolhido.
+- Implementar **pelo menos 2 classes de modelo** que simulem serviços (reais ou fictícios).
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## 📁 Estrutura do Projeto
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+    projeto-passagens-aereas/
+    ├── src/
+    │ ├── interfaces/ # Interfaces do sistema
+    │ ├── model/ # Classes de modelo (POJOs)
+    │ ├── services/ # Implementações de serviços
+    │ └── SistemaAereoApp.java # Classe principal
+    ├── bin/ # Diretório de saída da compilação
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
 
-## Dependency Management
+## 🛠️ Compilação
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Navegue até a raiz do projeto e compile os arquivos Java:
 
-Aplicação: Sistemas de Controle de Passagens Aéreas
-Superclasse: Passagem
-Subclasses: de Passagem: Passagem de Primeira Classe, Passagem de Classe Econômica
-Agregação: Voo será uma classe que agregará diversas passagens.
-Interface: "Transferível" (que pode ser transferida para outra pessoa).
+```bash
+cd questao01
+javac -d bin src/*.java src/interfaces/*.java src/model/*.java src/services/*.java
+```
 
-1. Com base nas informações acima, crie classes do tipo POJO que representem as informações desse serviço e 2 classes de modelo que implementam serviços.
+## ▶️ Execução
+
+```bash
+java -cp bin SistemaAereoApp
+```
+
+## ✅ Saída esperada
+
+Passagem PC-001 transferida para: Carlos Mendes
+
+Passagens no voo V101:  
+• PC-001 (PassagemPrimeiraClasse) - Proprietário: Carlos Mendes  
+• EC-205 (PassagemClasseEconomica) - Proprietário: Maria Oliveira  
