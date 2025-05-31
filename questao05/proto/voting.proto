@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package voting; // Pacote Java
+
+option java_package = "voting"; // Pacote Java
+option java_outer_classname = "VotingProtos"; // Nome da classe gerada
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  bool success = 1;
+  string message = 2;
+  repeated Candidate candidates = 3;
+}
+
+message Candidate {
+  int32 id = 1;
+  string name = 2;
+}
+
+message VoteRequest {
+  int32 candidate_id = 1;
+  string voter_id = 2;
+}
+
+message VoteResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message AdminCommand {
+  oneof command {
+    AddCandidate add_candidate = 1;
+    RemoveCandidate remove_candidate = 2;
+    string notification = 3;
+  }
+}
+
+message AddCandidate {
+  Candidate candidate = 1;
+}
+
+message RemoveCandidate {
+  int32 candidate_id = 1;
+}
