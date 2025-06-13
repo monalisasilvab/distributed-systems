@@ -1,6 +1,6 @@
 package model;
 
-public class PassagemClasseEconomica extends Passagem {
+public abstract class PassagemClasseEconomica extends Passagem {
     private boolean bagagemGratuita;
     private int numeroAssento;
 

@@ -1,8 +1,9 @@
 package model;
 
 import java.io.Serializable;
+import interfaces.Transferivel;
 
-public class Passagem implements Transferivel, Serializable { 
+public abstract class Passagem implements Transferivel, Serializable { 
     private String codigo;
     private String proprietario;
     private Voo voo;
