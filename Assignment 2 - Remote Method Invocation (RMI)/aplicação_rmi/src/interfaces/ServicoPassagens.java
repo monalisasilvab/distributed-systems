@@ -2,6 +2,7 @@ package interfaces;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import model.*;
 
 public class ServicoPassagens extends Remote {
     
