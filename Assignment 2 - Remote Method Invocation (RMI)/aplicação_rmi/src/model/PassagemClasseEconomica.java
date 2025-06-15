@@ -1,6 +1,10 @@
 package model;
 
-public abstract class PassagemClasseEconomica extends Passagem {
+import java.rmi.RemoteException;
+
+import interfaces.Transferivel;
+
+public class PassagemClasseEconomica extends Passagem implements Transferivel{
     private boolean bagagemGratuita;
     private int numeroAssento;
 
@@ -17,4 +21,11 @@ public abstract class PassagemClasseEconomica extends Passagem {
     public int getNumeroAssento() {
         return numeroAssento;
     }
+
+    @Override
+    public void transferir(String novoProprietario) throws RemoteException {
+        setProprietario(novoProprietario); // Atualiza o proprietário via setter
+    }
+
+
 }
