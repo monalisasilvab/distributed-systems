@@ -8,3 +8,4 @@ public class HelloService {
         return "Olá, " + name + "! Bem-vindo à API EJB.";
     }
 }
+    

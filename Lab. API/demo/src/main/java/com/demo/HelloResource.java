@@ -11,7 +11,7 @@ import jakarta.ws.rs.core.MediaType;
 public class HelloResource {
 
     @Inject
-    private HelloService helloService;
+    private HelloService helloService;  
 
     @GET
     @Path("/{name}")
