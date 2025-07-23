@@ -1,8 +1,9 @@
 package com.example.passagens_api.client; 
 
-import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
-import com.example.passagens_api.controller.PassagemController.*;
+import com.example.passagens_api.controller.PassagemController.ReservaRequest;
+import com.example.passagens_api.controller.PassagemController.TransferRequest;
+import com.example.passagens_api.controller.PassagemController.ReservaEconomicaRequest;
 import com.example.passagens_api.model.PassagemClasseEconomica;
 import com.example.passagens_api.model.PassagemPrimeiraClasse;
 
