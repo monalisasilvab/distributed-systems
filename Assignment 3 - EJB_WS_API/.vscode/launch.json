@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Application",
+            "request": "launch",
+            "mainClass": "com.example.passagens_api.Application",
+            "projectName": "passagens-api"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-PassagensApiApplication<passagens-api>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.passagens_api.PassagensApiApplication",
+            "projectName": "passagens-api",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

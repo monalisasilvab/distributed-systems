@@ -6,9 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/passagens")
+@RequestMapping("/api/passagens")
 public class PassagemController {
-    
     private final PassagemService service;
     public PassagemController(PassagemService service) { this.service = service; }
 
@@ -37,16 +36,16 @@ public class PassagemController {
     }
 
     // DTOs
-    static class ReservaRequest {
+    public static class ReservaRequest {
         public String numeroVoo;
         public String codigo;
         public String proprietario;
         public double preco;
     }
-    static class ReservaEconomicaRequest extends ReservaRequest {
+    public static class ReservaEconomicaRequest extends ReservaRequest {
         public int assento;
     }
-    static class TransferRequest {
+    public static class TransferRequest {
         public String numeroVoo;
         public String codigo;
         public String novoProprietario;
