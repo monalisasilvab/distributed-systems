@@ -1,4 +1,4 @@
-# Time and Global State Lab
+# Time and Global State Laboratory
 
 Pré-requisitos: Comunicação com Sockets TCP/UDP em Java, Threads, noções de concorrência.
 
