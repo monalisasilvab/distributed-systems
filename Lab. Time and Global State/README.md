@@ -1,6 +1,6 @@
 # Time and Global State Laboratory
 
-Pré-requisitos: Comunicação com Sockets TCP/UDP em Java, Threads, noções de concorrência.
+Prerequisites: Communication with TCP/UDP Sockets in Java, Threads, notions of concurrency.
 
 ## Goals
 - Implement and observe the difference between physical and logical clocks.
