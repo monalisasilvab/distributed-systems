@@ -1,6 +1,9 @@
 package com.example.passagens_api.model;
 
 public class PassagemClasseEconomica extends Passagem {
+    public PassagemClasseEconomica() {
+        super(null, null, null, 0); // necessário para o Jackson
+    }
     
     private int assento;
 

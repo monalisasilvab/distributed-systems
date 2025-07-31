@@ -18,29 +18,35 @@ public class PassagemService {
 
     public PassagemPrimeiraClasse reservarPrimeira(String numeroVoo, String codigo, String proprietario, double preco) {
         Voo voo = voos.get(numeroVoo);
-        
-        return new PassagemPrimeiraClasse(voo, codigo, proprietario, preco);
+        PassagemPrimeiraClasse passagem = new PassagemPrimeiraClasse(voo, codigo, proprietario, preco);
+        voo.addPassagem(passagem); // CORREÇÃO: Adiciona a passagem ao voo
+        return passagem;
     }
 
     public PassagemClasseEconomica reservarEconomica(String numeroVoo, String codigo, String proprietario, double preco, int assento) {
         Voo voo = voos.get(numeroVoo);
-        return new PassagemClasseEconomica(voo, codigo, proprietario, preco, assento);
+        PassagemClasseEconomica passagem = new PassagemClasseEconomica(voo, codigo, proprietario, preco, assento);
+        voo.addPassagem(passagem); // CORREÇÃO: Adiciona a passagem ao voo
+        return passagem;
     }
 
-     public void cancelarReserva(String numeroVoo, String codigo) {
+    public void cancelarReserva(String numeroVoo, String codigo) {
         Voo voo = voos.get(numeroVoo);
-        voo.getPassagens().stream()
-           .filter(p -> p.getCodigo().equals(codigo))
-           .findFirst()
-           .ifPresent(voo::removePassagem);
+        if (voo != null) {
+            voo.getPassagens().stream()
+               .filter(p -> p.getCodigo().equals(codigo))
+               .findFirst()
+               .ifPresent(voo::removePassagem);
+        }
     }
 
     public void transferirPassagem(String numeroVoo, String codigo, String novoProprietario) {
         Voo voo = voos.get(numeroVoo);
-        voo.getPassagens().stream()
-           .filter(p -> p.getCodigo().equals(codigo))
-           .findFirst()
-           .ifPresent(p -> p.setProprietario(novoProprietario));
+        if (voo != null) {
+            voo.getPassagens().stream()
+               .filter(p -> p.getCodigo().equals(codigo))
+               .findFirst()
+               .ifPresent(p -> p.setProprietario(novoProprietario));
+        }
     }
-
 }

@@ -1,5 +1,6 @@
 package com.example.passagens_api.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +8,8 @@ public class Voo {
     private String numeroVoo;
     private String origem;
     private String destino;   
+    
+    @JsonManagedReference // 👈 ESTA ANOTAÇÃO É CRUCIAL
     private List<Passagem> passagens = new ArrayList<>();
 
     public Voo() {
@@ -18,6 +21,7 @@ public class Voo {
         this.destino = destino;
     }
 
+    // Getters e setters permanecem iguais
     public String getNumeroVoo() {
         return numeroVoo;
     }
@@ -53,4 +57,8 @@ public class Voo {
     public void removePassagem(Passagem p) {
         passagens.remove(p);
     }
+
+    public void setPassagens(List<Passagem> passagens) {
+    this.passagens = passagens;
+}
 }

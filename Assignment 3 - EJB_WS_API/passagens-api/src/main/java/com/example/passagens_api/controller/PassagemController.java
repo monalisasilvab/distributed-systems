@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/passagens")
 public class PassagemController {
     private final PassagemService service;
-    public PassagemController(PassagemService service) { this.service = service; }
+    
+    public PassagemController(PassagemService service) { 
+        this.service = service; 
+    }
 
     @PostMapping("/primeira")
     public ResponseEntity<PassagemPrimeiraClasse> reservarPrimeira(@RequestBody ReservaRequest req) {
@@ -35,16 +38,18 @@ public class PassagemController {
         return ResponseEntity.ok().build();
     }
 
-    // DTOs
+    // DTOs CORRIGIDOS
     public static class ReservaRequest {
         public String numeroVoo;
         public String codigo;
         public String proprietario;
         public double preco;
     }
+    
     public static class ReservaEconomicaRequest extends ReservaRequest {
         public int assento;
     }
+    
     public static class TransferRequest {
         public String numeroVoo;
         public String codigo;
