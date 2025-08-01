@@ -1,7 +1,7 @@
 import requests
 import json
 
-BASE_URL = "http://localhost:8080/api/passagens"
+BASE_URL = "http://172.25.206.81:8080/api/passagens"
 
 def reservar_primeira(numero_voo, codigo, proprietario, preco, taxa_embarque=50.0, taxa_alimentacao=30.0):
     """Reserva uma passagem de primeira classe com todos os parâmetros necessários"""
